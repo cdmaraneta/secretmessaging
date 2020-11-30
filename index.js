@@ -1,7 +1,6 @@
-const { hash } = window.location;
-const message = atob(hash.replace('#', ''));
-
-if (message) {
+if (window.location.hash) {
+  const { hash } = window.location;
+  const message = atob(hash.replace('#', ''));
   document.querySelector('#message-form').classList.add('hide');
   document.querySelector('#message-show').classList.remove('hide');
   document.querySelector('h1').innerHTML = message;
